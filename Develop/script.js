@@ -10,7 +10,7 @@ function generatePassword() {
     //ask the user how long they want the passowrd length to be
     var passwordl = parseInt(prompt("Choose a password length between 8-128 characters: "));
     //making sure that they input the correct data type
-    if (passwordl <= 7 || passwordl >= 129 ) {
+    if (passwordl <= 7 || passwordl >= 129 || isNaN(passwordl) === true) {
       alert("Please put in the correct character length");
       return generatePassword();
     }
