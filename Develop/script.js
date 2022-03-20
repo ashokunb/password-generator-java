@@ -28,16 +28,32 @@ function generatePassword() {
     while (uselect.length < passwordl) {
       if (criteriaLower) {
         uselect += lowercase[Math.floor(Math.random()*lowercase.length)];
+          //checking to see if our password already meets the lenght criteria
+          if (uselect.lenght === passwordl) {
+            break;
+          };
       }
       if (criteriaUpper) {
         uselect += uppercase[Math.floor(Math.random()*uppercase.length)];
+           //checking to see if our password already meets the lenght criteria
+           if (uselect.lenght === passwordl) {
+            break;
+          };
       }
       if (criteriaNumbers) {
         uselect += numbers[Math.floor(Math.random()*numbers.length)];
+          //checking to see if our password already meets the lenght criteria
+          if (uselect.lenght === passwordl) {
+            break;
+          };
       }
       if (criteriaSpecial) {
         uselect += special[Math.floor(Math.random()*special.length)];
-      }
+          //checking to see if our password already meets the lenght criteria
+          if (uselect.lenght === passwordl) {
+            break;
+          };
+      };
     };
   console.log(uselect);
 };
