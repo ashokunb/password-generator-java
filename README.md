@@ -1,1 +1,1 @@
-# password-generator-java
+# Password Generator Starter Code
