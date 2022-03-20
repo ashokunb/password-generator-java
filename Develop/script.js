@@ -7,11 +7,11 @@ function generatePassword() {
   var special = "!#$%&'()*+,-./<=>?@[]^_`{}|~";
   
   var uselect = "";
-    //ask the user how long they want the passowrd lenght to be
-    var passwordl = parseInt(prompt("Choose a password lenght between 8-128 characters: "));
+    //ask the user how long they want the passowrd length to be
+    var passwordl = parseInt(prompt("Choose a password length between 8-128 characters: "));
     //making sure that they input the correct data type
-    if (passwordl <= 7 || passwordl >= 129) {
-      alert("Please put in the correct character lenght");
+    if (passwordl <= 7 || passwordl >= 129 ) {
+      alert("Please put in the correct character length");
       return generatePassword();
     }
     //creating the criteria's for what is within the password
@@ -28,35 +28,37 @@ function generatePassword() {
     while (uselect.length < passwordl) {
       if (criteriaLower) {
         uselect += lowercase[Math.floor(Math.random()*lowercase.length)];
-          //checking to see if our password already meets the lenght criteria
-          if (uselect.lenght === passwordl) {
+          //checking to see if our password already meets the length criteria
+          if (uselect.length === passwordl) {
             break;
           };
       }
       if (criteriaUpper) {
         uselect += uppercase[Math.floor(Math.random()*uppercase.length)];
-           //checking to see if our password already meets the lenght criteria
-           if (uselect.lenght === passwordl) {
+           //checking to see if our password already meets the length criteria
+           if (uselect.length === passwordl) {
             break;
           };
       }
       if (criteriaNumbers) {
         uselect += numbers[Math.floor(Math.random()*numbers.length)];
-          //checking to see if our password already meets the lenght criteria
-          if (uselect.lenght === passwordl) {
+          //checking to see if our password already meets the length criteria
+          if (uselect.length === passwordl) {
             break;
           };
       }
       if (criteriaSpecial) {
         uselect += special[Math.floor(Math.random()*special.length)];
-          //checking to see if our password already meets the lenght criteria
-          if (uselect.lenght === passwordl) {
+          //checking to see if our password already meets the length criteria
+          if (uselect.length === passwordl) {
             break;
           };
       };
     };
+  console.log("Your password length is: " + passwordl);
+  console.log("Your password is: " + uselect);
   
-  return uselect;
+  return uselect
 };
 
 // Get references to the #generate element
